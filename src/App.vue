@@ -1,5 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+</script>
 
 <template>
-  <div class="flex min-h-screen h-full">Hello World!</div>
+  <main id="app" class="min-h-screen w-full">
+    <RouterView />
+  </main>
 </template>
