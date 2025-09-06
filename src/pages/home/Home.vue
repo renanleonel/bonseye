@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { PlantQueries } from '@/api/queries/plants'
-import PlantCard from '@/components/PlantCard.vue'
+import Error from '@/components/error/Error.vue'
+import PlantCard from '@/components/plant-card/PlantCard.vue'
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import HomeSkeleton from '@/pages/home/HomeSkeleton.vue'
 import { debounce } from 'es-toolkit'
 import { computed, ref, watch } from 'vue'
 
@@ -19,25 +22,32 @@ const listPlantsQuery = PlantQueries.useListPlantsQuery({
 })
 
 const plants = computed(() => listPlantsQuery.data.value?.data)
+
+const isError = computed(() => listPlantsQuery.isError.value)
 const isLoading = computed(() => listPlantsQuery.isLoading.value)
 </script>
 
 <template>
-  <div class="p-10 space-y-8">
+  <div v-if="isLoading">
+    <HomeSkeleton />
+  </div>
+
+  <Error v-else-if="isError">
+    <Button @click="listPlantsQuery.refetch()">Try Again</Button>
+  </Error>
+
+  <div v-else class="p-10 space-y-8">
     <div class="flex gap-4">
       <Input
-        v-model="searchQuery"
         type="text"
+        v-model="searchQuery"
         placeholder="Search plants..."
         aria-label="Search plants"
         class="focus-visible:ring-green-800/20"
       />
     </div>
 
-    <div v-if="isLoading">loading...</div>
-
     <div
-      v-else
       class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-8 md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] md:gap-4 sm:grid-cols-1"
     >
       <PlantCard v-for="plant in plants" :key="plant.id" :plant="plant" />

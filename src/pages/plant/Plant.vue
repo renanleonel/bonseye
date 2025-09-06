@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { PlantQueries } from '@/api/queries/plants'
+import Error from '@/components/error/Error.vue'
 import { Button } from '@/components/ui/button'
+import PlantSkeleton from '@/pages/plant/PlantSkeleton.vue'
 import { ChevronLeft, Droplet, House, Sun } from 'lucide-vue-next'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
@@ -17,10 +19,18 @@ const getPlantByIdQuery = PlantQueries.useGetPlantById({
 
 const plant = computed(() => getPlantByIdQuery.data.value)
 const isLoading = computed(() => getPlantByIdQuery.isLoading.value)
+const isError = computed(() => getPlantByIdQuery.isError.value)
+const error = computed(() => getPlantByIdQuery.error.value)
 </script>
 
 <template>
-  <div v-if="isLoading">loading...</div>
+  <PlantSkeleton v-if="isLoading" />
+
+  <Error v-else-if="isError">
+    <Button @click="router.back()">Go Back</Button>
+    <Button @click="getPlantByIdQuery.refetch()">Try Again</Button>
+  </Error>
+
   <div v-else-if="plant" class="p-8">
     <nav class="flex items-center gap-4 mb-8">
       <button
