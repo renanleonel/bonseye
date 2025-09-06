@@ -1,6 +1,6 @@
 import type { Cycle, HardinessZone, Order, Sunlight, Watering } from '@/domain/enums'
 
-export interface ApiResponse<T> {
+export type ApiResponse<T> = {
   data: T
   error?: string
 }

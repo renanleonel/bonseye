@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { Badge } from '@/components/ui/badge'
 import type { Plant } from '@/domain/types/plant'
+import { capitalize } from 'es-toolkit'
 import { useRouter } from 'vue-router'
 
-interface Props {
+type Props = {
   plant: Plant
 }
 
-const props = defineProps<Props>()
-
 const router = useRouter()
+const props = defineProps<Props>()
 
 const navigateToItem = (): void => {
   router.push(`/plants/${props.plant.id}`)
@@ -38,13 +38,13 @@ const navigateToItem = (): void => {
 
         <div class="flex gap-2">
           <Badge v-if="plant.family" class="bg-green-800/50">
-            {{ plant.family }}
+            {{ capitalize(plant.family) }}
           </Badge>
           <Badge v-if="plant.genus" class="bg-green-800/50">
-            {{ plant.genus }}
+            {{ capitalize(plant.genus) }}
           </Badge>
           <Badge v-if="plant.species_epithet" class="bg-green-800/50">
-            {{ plant.species_epithet }}
+            {{ capitalize(plant.species_epithet) }}
           </Badge>
         </div>
       </div>

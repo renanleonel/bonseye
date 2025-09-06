@@ -6,7 +6,7 @@ import type {
   PlantDetails,
   ProcessedPlantsResponse,
 } from '@/domain/types/plant'
-import { createMap } from '@/utils/create-map'
+import { createMap } from '@/lib/create-map'
 import { useQuery, type UseQueryOptions } from '@tanstack/vue-query'
 import type { AxiosError } from 'axios'
 import type { ComputedRef } from 'vue'

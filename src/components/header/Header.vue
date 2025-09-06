@@ -8,9 +8,15 @@
 
       <div class="flex items-center gap-8">
         <RouterLink to="/garden">
-          <Button class="bg-green-800 hover:bg-green-700 cursor-pointer">
+          <Button class="bg-green-800 hover:bg-green-700 cursor-pointer relative">
             Garden
             <Leaf />
+            <span
+              v-if="plantCount > 0"
+              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+            >
+              {{ plantCount }}
+            </span>
           </Button>
         </RouterLink>
       </div>
@@ -20,6 +26,11 @@
 
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
+import { useGardenStore } from '@/stores/garden'
 import { Leaf, TreePine } from 'lucide-vue-next'
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
+
+const gardenStore = useGardenStore()
+const plantCount = computed(() => gardenStore.plantCount)
 </script>
