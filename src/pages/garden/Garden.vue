@@ -26,7 +26,7 @@ const isEmpty = computed(() => plantCount.value === 0)
       <h3 class="text-lg font-medium text-gray-900 mb-2">Your garden is empty</h3>
       <p class="text-gray-500 mb-6">Start building your collection by adding plants you like!</p>
       <router-link to="/">
-        <Button class="bg-green-600 hover:bg-green-700 cursor-pointer">Browse Plants</Button>
+        <Button class="bg-green-800/50 hover:bg-green-700/50 cursor-pointer">Browse Plants</Button>
       </router-link>
     </div>
 

@@ -13,10 +13,10 @@ export enum Watering {
 }
 
 export enum Sunlight {
-  FULL_SHADE = 'full_shade',
-  PART_SHADE = 'part_shade',
-  SUN_PART_SHADE = 'sun-part_shade',
-  FULL_SUN = 'full_sun',
+  FULL_SHADE = 'full shade',
+  PART_SHADE = 'part shade',
+  SUN_PART_SHADE = 'sun-part shade',
+  FULL_SUN = 'full sun',
 }
 
 export enum HardinessZone {

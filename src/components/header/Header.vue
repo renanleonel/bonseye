@@ -14,20 +14,14 @@ const plantCount = computed(() => gardenStore.plantCount)
     <div class="max-w-6xl mx-auto px-5 md:px-5 sm:px-2.5 flex items-center justify-between">
       <RouterLink to="/" class="flex items-center gap-2">
         <TreePine class="text-green-800" />
-        <h1 class="text-gray-800 text-xl font-bold">Bonseye</h1>
+        <h1 class="text-gray-800 text-xl font-medium">Bonseye</h1>
       </RouterLink>
 
       <div class="flex items-center gap-8">
         <RouterLink to="/garden">
-          <Button class="bg-green-800 hover:bg-green-700 cursor-pointer relative">
+          <Button class="bg-green-800/50 hover:bg-green-700/50 cursor-pointer relative">
             Garden
             <Leaf />
-            <span
-              v-if="plantCount > 0"
-              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
-            >
-              {{ plantCount }}
-            </span>
           </Button>
         </RouterLink>
       </div>

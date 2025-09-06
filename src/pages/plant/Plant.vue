@@ -75,27 +75,30 @@ const handleTogglePlant = () => {
 
         <div class="flex gap-4">
           <div class="flex items-center gap-1">
-            <House />
-            <p v-if="plant?.indoor">Yes</p>
-            <p v-else>No</p>
+            <House class="size-4" />
+            <p v-if="plant?.indoor" class="text-gray-600">Yes</p>
+            <p v-else class="text-gray-600">No</p>
           </div>
 
           <div class="flex items-center gap-1">
-            <Sun />
-            <p>
+            <Sun class="size-4" />
+            <p class="text-gray-600">
               {{ plant?.sunlight?.[0] ? capitalize(plant.sunlight[0]) : '' }}
             </p>
           </div>
 
           <div class="flex items-center gap-1">
-            <Droplet />
-            <p>
+            <Droplet class="size-4" />
+            <p class="text-gray-600">
               {{ plant?.watering ? capitalize(plant.watering) : '' }}
             </p>
           </div>
         </div>
 
-        <Button class="max-w-80 cursor-pointer" @click="handleTogglePlant">
+        <Button
+          class="max-w-80 cursor-pointer bg-green-800/50 hover:bg-green-700/50"
+          @click="handleTogglePlant"
+        >
           {{ isInGarden ? 'Remove from garden' : 'Add to garden' }}
         </Button>
       </div>
