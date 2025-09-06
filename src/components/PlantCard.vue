@@ -1,0 +1,50 @@
+<script setup lang="ts">
+import type { Plant } from '@/domain/types/plant'
+import { useRouter } from 'vue-router'
+
+interface Props {
+  plant: Plant
+}
+
+const props = defineProps<Props>()
+
+const router = useRouter()
+
+const navigateToItem = (): void => {
+  router.push(`/plants/${props.plant.id}`)
+}
+</script>
+
+<template>
+  <div
+    class="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer"
+    @click="navigateToItem"
+  >
+    <div class="w-full h-48 bg-gray-50 flex items-center justify-center">
+      <img
+        :alt="plant.common_name"
+        :src="plant.default_image?.original_url"
+        class="w-full h-full object-cover transition-transform duration-200"
+      />
+    </div>
+    <div class="p-4">
+      <div class="flex flex-col gap-2">
+        <h3 class="text-lg font-semibold">
+          {{ plant.common_name }}
+        </h3>
+        <div class="flex gap-2">
+          <div v-if="plant.family" class="rounded bg-green-300 w-fit px-2 text-xs">
+            {{ plant.family }}
+          </div>
+          <div v-if="plant.genus" class="rounded bg-green-300 w-fit px-2 text-xs">
+            {{ plant.genus }}
+          </div>
+          <div v-if="plant.species_epithet" class="rounded bg-green-300 w-fit px-2 text-xs">
+            {{ plant.species_epithet }}
+          </div>
+        </div>
+        <p class="text-xs italic text-gray-500">{{ plant.scientific_name[0] }}</p>
+      </div>
+    </div>
+  </div>
+</template>

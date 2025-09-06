@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PlantQueries } from '@/api/queries/plants'
-import ItemCard from '@/components/ItemCard.vue'
+import PlantCard from '@/components/PlantCard.vue'
 import { debounce } from 'es-toolkit'
 import { computed, ref, watch } from 'vue'
 
@@ -14,9 +14,7 @@ const debouncedUpdate = debounce((value: string) => {
 watch(searchQuery, (newValue) => debouncedUpdate(newValue))
 
 const listPlantsQuery = PlantQueries.useListPlantsQuery({
-  params: () => ({
-    q: debouncedSearchQuery.value || undefined,
-  }),
+  params: computed(() => ({ q: debouncedSearchQuery.value || undefined })),
 })
 
 const plants = computed(() => listPlantsQuery.data.value?.data)
@@ -39,7 +37,7 @@ const isLoading = computed(() => listPlantsQuery.isLoading.value)
       v-else
       class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-8 md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] md:gap-4 sm:grid-cols-1"
     >
-      <ItemCard v-for="plant in plants" :key="plant.id" :plant="plant" />
+      <PlantCard v-for="plant in plants" :key="plant.id" :plant="plant" />
     </div>
   </div>
 </template>

@@ -3,18 +3,28 @@ export interface ApiResponse<T> {
   error?: string
 }
 
-type PlantSection = {
-  id: number
-  type: string
-  description: string
-}
-
 export type Plant = {
   id: number
-  species_id: number
   common_name: string
   scientific_name: Array<string>
-  section: Array<PlantSection>
+  other_name: Array<string>
+  family: null
+  authority: null
+  subspecies: null
+  cultivar: null
+  variety: null
+  species_epithet: string
+  genus: string
+  default_image: {
+    license: number
+    license_name: string
+    license_url: string
+    original_url: string
+    regular_url: string
+    medium_url: string
+    small_url: string
+    thumbnail: string
+  }
 }
 
 export type ListPlantsParams = {

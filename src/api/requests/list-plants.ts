@@ -10,7 +10,7 @@ export async function listPlants(
 
   if (!key) throw new Error('Missing VITE_PERENUAL_API_KEY')
 
-  const url: string = `${API_BASE_URL}/species-care-guide-list`
+  const url: string = `${API_BASE_URL}/v2/species-list`
 
   const response = await axios.get<ListPlantsResponse>(url, {
     params: { key, ...params },

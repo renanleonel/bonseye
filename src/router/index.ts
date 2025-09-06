@@ -1,5 +1,5 @@
 import HomePage from '@/pages/HomePage.vue'
-import ItemDetailPage from '@/pages/ItemDetailPage.vue'
+import ItemDetailPage from '@/pages/PlantDetailPage.vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
@@ -9,8 +9,8 @@ const routes: RouteRecordRaw[] = [
     component: HomePage,
   },
   {
-    path: '/items/:id',
-    name: 'ItemDetail',
+    path: '/plants/:id',
+    name: 'PlantDetail',
     component: ItemDetailPage,
     props: true,
   },

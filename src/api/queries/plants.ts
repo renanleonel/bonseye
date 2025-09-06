@@ -7,6 +7,7 @@ import type {
 import { createMap } from '@/utils/create-map'
 import { useQuery, type UseQueryOptions } from '@tanstack/vue-query'
 import type { AxiosError } from 'axios'
+import type { ComputedRef } from 'vue'
 
 const PLANTS_QUERY_KEY_BASE = ['plants'] as const
 
@@ -14,7 +15,7 @@ const STALE_TIME = 60 * 1000 * 5 // 5 minutes
 const REFETCH_INTERVAL = 60 * 1000 * 5 // 5 minutes
 
 type ListPlantsQuery = {
-  params?: ListPlantsParams
+  params?: ComputedRef<ListPlantsParams>
   options?: Exclude<
     UseQueryOptions<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>,
     'queryKey' | 'queryFn'
@@ -27,7 +28,7 @@ export function useListPlantsQuery({ options, params }: ListPlantsQuery) {
   const query = useQuery<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>({
     queryKey,
     queryFn: async ({ signal }) => {
-      const response = await listPlants(params, signal)
+      const response = await listPlants(params?.value, signal)
 
       return response
     },
