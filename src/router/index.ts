@@ -1,6 +1,6 @@
-import Garden from '@/pages/garden/Garden.vue'
-import Home from '@/pages/home/Home.vue'
-import Plant from '@/pages/plant/Plant.vue'
+import Garden from '@/pages/garden/GardenPage.vue'
+import Home from '@/pages/home/HomePage.vue'
+import Plant from '@/pages/plant/PlantPage.vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [

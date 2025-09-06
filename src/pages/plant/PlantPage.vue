@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlantQueries } from '@/api/queries/plants'
+import { PlantImage } from '@/components/plant-image'
 import { Button } from '@/components/ui/button'
-import { PlantImage } from '@/components/ui/plant-image'
 import { convertPlantDetailsToPlant } from '@/lib/plant-conversion'
 import { getPlantImageUrl } from '@/lib/plant-image-utils'
 import PlantSkeleton from '@/pages/plant/PlantSkeleton.vue'

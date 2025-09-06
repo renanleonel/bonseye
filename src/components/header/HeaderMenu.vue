@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
-import { useGardenStore } from '@/stores/garden'
 import { Leaf, TreePine } from 'lucide-vue-next'
-import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-
-const gardenStore = useGardenStore()
-const plantCount = computed(() => gardenStore.plantCount)
 </script>
 
 <template>

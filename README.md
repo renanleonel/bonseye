@@ -1,22 +1,32 @@
-# Bonseye
+# 🌱 Bonseye
 
-Bonseye is a web app that lets users search for plants, add them to a personal garden, and track their plants over time.
+A modern Vue 3 application that allows users to **search for plants**, **add them to a personal garden**, and **track plant details over time**. Designed for plant enthusiasts who want a simple and intuitive way to manage a digital garden.
 
-## Purpose
+## ✨ Features
 
-The goal of this project is to provide a simple and intuitive way for plant enthusiasts to explore plant data and manage their own digital garden.
+- **Plant Search**: Browse and search plants from an external API
+- **Personal Garden**: Add plants to your own collection
+  W- **Responsive Design**: Optimized for mobile and desktop
+- **Data Caching**: Efficient data fetching with TanStack Vue Query
+- **Modern UI**: Styled with Tailwind CSS and shadcn/ui
 
-## Tech Stack
+## 🛠 Tech Stack
 
-- **Framework:** Vue 3
-- **Routing:** Vue Router
-- **State Management:** Pinia
-- **Testing:** Vitest
-- **Data Fetching & Caching:** TanStack Vue Query
-- **UI & Styling:** Tailwind CSS, shadcn/ui
-- **Tooling:** Vite, TypeScript, ESLint, Prettier
+- **Vue 3** (Composition API) with **TypeScript**
+- **Vue Router** for navigation
+- **Pinia** for state management
+- **TanStack Vue Query** for data fetching and caching
+- **Vitest** for unit testing
+- **Vite** for tooling and fast development
+- **Tailwind CSS** + **shadcn/ui** for styling
+- **ESLint** + **Prettier** for code quality and formatting
 
-## Project Setup
+## 📦 Project Setup
+
+```sh
+git clone <repository-url>
+cd bonseye
+```
 
 ```sh
 pnpm install

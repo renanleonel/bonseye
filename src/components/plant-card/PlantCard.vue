@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { PlantImage } from '@/components/plant-image'
 import { Badge } from '@/components/ui/badge'
-import { PlantImage } from '@/components/ui/plant-image'
 import type { Plant } from '@/domain/types/plant'
 import { getPlantImageUrl } from '@/lib/plant-image-utils'
 import { capitalize } from 'es-toolkit'
