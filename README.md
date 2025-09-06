@@ -4,9 +4,9 @@ A modern Vue 3 application that allows users to **search for plants**, **add the
 
 ## ✨ Features
 
-- **Plant Search**: Browse and search plants from an external API
+- **Plant Search**: Browse and search plants from the [Perenual API](https://perenual.com/docs/api)
 - **Personal Garden**: Add plants to your own collection
-  W- **Responsive Design**: Optimized for mobile and desktop
+- **Responsive Design**: Optimized for mobile and desktop
 - **Data Caching**: Efficient data fetching with TanStack Vue Query
 - **Modern UI**: Styled with Tailwind CSS and shadcn/ui
 
@@ -23,14 +23,24 @@ A modern Vue 3 application that allows users to **search for plants**, **add the
 
 ## 📦 Project Setup
 
-```sh
+````sh
 git clone <repository-url>
 cd bonseye
-```
+
 
 ```sh
 pnpm install
 ```
+
+### Environment Variables
+
+Create a .env file in the project root with:
+
+```sh
+VITE_PERENUAL_API_KEY=<your_api_key_here>
+```
+
+You can generate an API key from the [Perenual website](https://perenual.com/user/developer)
 
 ### Compile and Hot-Reload for Development
 
@@ -55,3 +65,4 @@ pnpm test:unit
 ```sh
 pnpm lint
 ```
+````
