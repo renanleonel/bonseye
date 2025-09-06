@@ -37,13 +37,13 @@ const navigateToItem = (): void => {
         <p class="text-xs italic text-gray-500">{{ plant.other_name[0] }}</p>
 
         <div class="flex gap-2">
-          <Badge v-if="plant.family" class="bg-green-300">
+          <Badge v-if="plant.family" class="bg-green-800/50">
             {{ plant.family }}
           </Badge>
-          <Badge v-if="plant.genus" class="bg-green-300">
+          <Badge v-if="plant.genus" class="bg-green-800/50">
             {{ plant.genus }}
           </Badge>
-          <Badge v-if="plant.species_epithet" class="bg-green-300">
+          <Badge v-if="plant.species_epithet" class="bg-green-800/50">
             {{ plant.species_epithet }}
           </Badge>
         </div>

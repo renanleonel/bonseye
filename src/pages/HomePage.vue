@@ -2,15 +2,6 @@
 import { PlantQueries } from '@/api/queries/plants'
 import PlantCard from '@/components/PlantCard.vue'
 import { Input } from '@/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import { debounce } from 'es-toolkit'
 import { computed, ref, watch } from 'vue'
 
@@ -39,19 +30,8 @@ const isLoading = computed(() => listPlantsQuery.isLoading.value)
         type="text"
         placeholder="Search plants..."
         aria-label="Search plants"
+        class="focus-visible:ring-green-800/20"
       />
-
-      <Select>
-        <SelectTrigger>
-          <SelectValue placeholder="Select a fruit" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectLabel>Fruits</SelectLabel>
-            <SelectItem value="apple"> Apple </SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
     </div>
 
     <div v-if="isLoading">loading...</div>

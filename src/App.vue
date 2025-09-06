@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import Header from '@/components/Header.vue'
 import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <main id="app" class="min-h-screen w-full">
-    <RouterView />
-  </main>
+  <div class="bg-[#f7f6f5] min-h-screen">
+    <Header />
+    <main id="app" class="max-w-6xl mx-auto">
+      <RouterView />
+    </main>
+  </div>
 </template>
