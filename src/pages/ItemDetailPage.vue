@@ -68,11 +68,10 @@
 </template>
 
 <script setup lang="ts">
-import type { Item } from '@/types'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const item = ref<Item | null>(null)
+const item = ref<any | null>(null)
 </script>

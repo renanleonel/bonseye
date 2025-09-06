@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Item } from '@/types'
+import type { Plant } from '@/domain/types/plant'
 import { useRouter } from 'vue-router'
 
 interface Props {
-  item: Item
+  plant: Plant
 }
 
 const props = defineProps<Props>()
@@ -11,7 +11,7 @@ const props = defineProps<Props>()
 const router = useRouter()
 
 const navigateToItem = (): void => {
-  router.push(`/items/${props.item.id}`)
+  router.push(`/items/${props.plant.id}`)
 }
 </script>
 
@@ -21,14 +21,14 @@ const navigateToItem = (): void => {
     @click="navigateToItem"
   >
     <div class="w-full h-48 bg-gray-50 flex items-center justify-center">
-      <img
-        :alt="item.title"
-        :src="item.images[0]"
+      <!-- <img
+        :alt="plant.common_name"
+        :src="plant.images[0]"
         class="w-full h-full object-cover transition-transform duration-200"
-      />
+      /> -->
     </div>
     <h3 class="text-lg font-semibold">
-      {{ item.title }}
+      {{ plant.common_name }}
     </h3>
   </div>
 </template>

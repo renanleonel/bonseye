@@ -18,6 +18,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
+    "@tanstack/vue-query": "^5.86.0",
+    "axios": "^1.11.0",
+    "es-toolkit": "^1.39.10",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.12",
     "vue": "^3.5.18",
