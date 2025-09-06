@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import { PlantQueries } from '@/api/queries/plants'
 import PlantCard from '@/components/PlantCard.vue'
+import { Input } from '@/components/ui/input'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { debounce } from 'es-toolkit'
 import { computed, ref, watch } from 'vue'
 
@@ -23,13 +33,26 @@ const isLoading = computed(() => listPlantsQuery.isLoading.value)
 
 <template>
   <div class="p-10 space-y-8">
-    <input
-      v-model="searchQuery"
-      type="text"
-      placeholder="Search plants..."
-      class="p-2 border rounded w-full border-gray-400"
-      aria-label="Search plants"
-    />
+    <div class="flex gap-4">
+      <Input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Search plants..."
+        aria-label="Search plants"
+      />
+
+      <Select>
+        <SelectTrigger>
+          <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Fruits</SelectLabel>
+            <SelectItem value="apple"> Apple </SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
 
     <div v-if="isLoading">loading...</div>
 

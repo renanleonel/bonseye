@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Badge } from '@/components/ui/badge'
 import type { Plant } from '@/domain/types/plant'
 import { useRouter } from 'vue-router'
 
@@ -33,15 +34,15 @@ const navigateToItem = (): void => {
           {{ plant.common_name }}
         </h3>
         <div class="flex gap-2">
-          <div v-if="plant.family" class="rounded bg-green-300 w-fit px-2 text-xs">
+          <Badge v-if="plant.family" class="bg-green-300">
             {{ plant.family }}
-          </div>
-          <div v-if="plant.genus" class="rounded bg-green-300 w-fit px-2 text-xs">
+          </Badge>
+          <Badge v-if="plant.genus" class="bg-green-300">
             {{ plant.genus }}
-          </div>
-          <div v-if="plant.species_epithet" class="rounded bg-green-300 w-fit px-2 text-xs">
+          </Badge>
+          <Badge v-if="plant.species_epithet" class="bg-green-300">
             {{ plant.species_epithet }}
-          </div>
+          </Badge>
         </div>
         <p class="text-xs italic text-gray-500">{{ plant.scientific_name[0] }}</p>
       </div>
