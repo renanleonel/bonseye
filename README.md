@@ -23,10 +23,10 @@ A modern Vue 3 application that allows users to **search for plants**, **add the
 
 ## 📦 Project Setup
 
-````sh
+```sh
 git clone <repository-url>
 cd bonseye
-
+```
 
 ```sh
 pnpm install
@@ -65,4 +65,3 @@ pnpm test:unit
 ```sh
 pnpm lint
 ```
-````
