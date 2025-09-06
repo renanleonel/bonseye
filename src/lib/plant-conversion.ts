@@ -4,7 +4,7 @@ export const convertPlantDetailsToPlant = (plantDetails: PlantDetails): Plant =>
   const scientificName = plantDetails.scientific_name[0] || ''
   const nameParts = scientificName.split(' ')
 
-  return {
+  const plant: Plant = {
     id: plantDetails.id,
     common_name: plantDetails.common_name,
     scientific_name: plantDetails.scientific_name,
@@ -18,4 +18,6 @@ export const convertPlantDetailsToPlant = (plantDetails: PlantDetails): Plant =>
     genus: nameParts[0] || '',
     default_image: plantDetails.default_image,
   }
+
+  return plant
 }

@@ -13,6 +13,7 @@ export const useGardenStore = defineStore('garden', () => {
 
   const initializeFromStorage = () => {
     const storedPlants = getStorageItem(STORAGE_KEYS.GARDEN_PLANTS, [])
+
     if (Array.isArray(storedPlants)) {
       plants.value = storedPlants
     }

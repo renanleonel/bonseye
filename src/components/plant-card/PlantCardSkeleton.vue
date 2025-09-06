@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="bg-white rounded-xl shadow-md animate-pulse">
     <div class="w-full h-48 bg-gray-200 rounded-t-xl" />

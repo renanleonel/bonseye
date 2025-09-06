@@ -1,3 +1,4 @@
+import { getPlantById } from '@/api/requests/get-plant-by-id'
 import { listPlants } from '@/api/requests/list-plants'
 import type {
   GetPlantByIdParams,
@@ -7,10 +8,10 @@ import type {
   ProcessedPlantsResponse,
 } from '@/domain/types/plant'
 import { createMap } from '@/lib/create-map'
+import { mockListPlantsResponse, mockPlantDetailsMap } from '@/lib/mocks'
 import { useQuery, type UseQueryOptions } from '@tanstack/vue-query'
 import type { AxiosError } from 'axios'
 import type { ComputedRef } from 'vue'
-import { getPlantById } from '../requests/get-plant-by-id'
 
 const STALE_TIME = 60 * 1000 * 5 // 5 minutes
 const REFETCH_INTERVAL = 60 * 1000 * 5 // 5 minutes
@@ -29,9 +30,14 @@ export function useListPlantsQuery({ options, params }: ListPlantsQueryProps) {
   const query = useQuery<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>({
     queryKey,
     queryFn: async ({ signal }) => {
-      const response = await listPlants(params?.value, signal)
+      try {
+        const response = await listPlants(params?.value, signal)
 
-      return response
+        return response
+      } catch (error) {
+        console.warn('API failed, using mock data:', error)
+        return mockListPlantsResponse
+      }
     },
     select: (response: ListPlantsResponse): ProcessedPlantsResponse => {
       return { ...response, map: createMap(response.data) }
@@ -55,9 +61,20 @@ export function useGetPlantById({ options, params }: GetPlantByIdQueryProps) {
   const query = useQuery<PlantDetails, AxiosError>({
     queryKey,
     queryFn: async ({ signal }) => {
-      const response = await getPlantById(params, signal)
+      try {
+        const response = await getPlantById(params, signal)
 
-      return response
+        return response
+      } catch (error) {
+        console.warn('API failed, using mock data:', error)
+        const mockPlant = mockPlantDetailsMap[params.id]
+
+        if (!mockPlant) {
+          throw new Error(`Plant with ID ${params.id} not found in mock data`)
+        }
+
+        return mockPlant
+      }
     },
     staleTime: STALE_TIME,
     refetchInterval: REFETCH_INTERVAL,

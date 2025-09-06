@@ -1,5 +1,16 @@
+<script setup lang="ts">
+import { Button } from '@/components/ui/button'
+import { useGardenStore } from '@/stores/garden'
+import { Leaf, TreePine } from 'lucide-vue-next'
+import { computed } from 'vue'
+import { RouterLink } from 'vue-router'
+
+const gardenStore = useGardenStore()
+const plantCount = computed(() => gardenStore.plantCount)
+</script>
+
 <template>
-  <header class="border-b bg-[#f7f6f5] border-gray-200 py-4 sticky top-0 z-50">
+  <header class="border-b bg-[#F7F6F5] border-gray-200 py-4 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-5 md:px-5 sm:px-2.5 flex items-center justify-between">
       <RouterLink to="/" class="flex items-center gap-2">
         <TreePine class="text-green-800" />
@@ -23,14 +34,3 @@
     </div>
   </header>
 </template>
-
-<script setup lang="ts">
-import { Button } from '@/components/ui/button'
-import { useGardenStore } from '@/stores/garden'
-import { Leaf, TreePine } from 'lucide-vue-next'
-import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
-
-const gardenStore = useGardenStore()
-const plantCount = computed(() => gardenStore.plantCount)
-</script>

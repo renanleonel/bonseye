@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { PlantQueries } from '@/api/queries/plants'
-import Error from '@/components/error/Error.vue'
 import { Button } from '@/components/ui/button'
+import { PlantImage } from '@/components/ui/plant-image'
 import { convertPlantDetailsToPlant } from '@/lib/plant-conversion'
+import { getPlantImageUrl } from '@/lib/plant-image-utils'
 import PlantSkeleton from '@/pages/plant/PlantSkeleton.vue'
 import { useGardenStore } from '@/stores/garden'
 import { capitalize } from 'es-toolkit'
@@ -22,12 +23,13 @@ const getPlantByIdQuery = PlantQueries.useGetPlantById({
 
 const plant = computed(() => getPlantByIdQuery.data.value)
 const isLoading = computed(() => getPlantByIdQuery.isLoading.value)
-const isError = computed(() => getPlantByIdQuery.isError.value)
 
 const gardenStore = useGardenStore()
 const isInGarden = computed(() =>
   plant.value ? gardenStore.isPlantInGarden(plant.value.id) : false,
 )
+
+const imageUrl = computed(() => getPlantImageUrl(plant.value))
 
 const handleTogglePlant = () => {
   if (!plant.value) return
@@ -38,11 +40,6 @@ const handleTogglePlant = () => {
 
 <template>
   <PlantSkeleton v-if="isLoading" />
-
-  <Error v-else-if="isError">
-    <Button @click="router.back()">Go Back</Button>
-    <Button @click="getPlantByIdQuery.refetch()">Try Again</Button>
-  </Error>
 
   <div v-else-if="plant" class="p-8">
     <nav class="flex items-center gap-4 mb-8">
@@ -103,13 +100,12 @@ const handleTogglePlant = () => {
         </Button>
       </div>
 
-      <div
-        class="w-full h-96 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center"
-      >
-        <img
-          :src="plant?.default_image?.original_url"
-          :alt="plant?.common_name"
+      <div class="w-full h-96 rounded-xl overflow-hidden">
+        <PlantImage
+          :image-url="imageUrl"
+          :alt="plant?.common_name || 'Plant'"
           class="w-full h-full object-cover"
+          icon-size="xl"
         />
       </div>
     </div>

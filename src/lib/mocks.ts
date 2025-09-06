@@ -23,16 +23,11 @@ export const mockPlant: Plant = {
     license: 4,
     license_name: 'Attribution License',
     license_url: 'https://creativecommons.org/licenses/by/2.0/',
-    original_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/og/15333457985_402b5b8f07_b.jpg',
-    regular_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/regular/15333457985_402b5b8f07_b.jpg',
-    medium_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/medium/15333457985_402b5b8f07_b.jpg',
-    small_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/small/15333457985_402b5b8f07_b.jpg',
-    thumbnail:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/thumbnail/15333457985_402b5b8f07_b.jpg',
+    original_url: '',
+    regular_url: '',
+    medium_url: '',
+    small_url: '',
+    thumbnail: '',
   },
 }
 
@@ -111,35 +106,13 @@ export const mockPlantDetails: PlantDetails = {
     license: 4,
     license_name: 'Attribution License',
     license_url: 'https://creativecommons.org/licenses/by/2.0/',
-    original_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/og/15333457985_402b5b8f07_b.jpg',
-    regular_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/regular/15333457985_402b5b8f07_b.jpg',
-    medium_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/medium/15333457985_402b5b8f07_b.jpg',
-    small_url:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/small/15333457985_402b5b8f07_b.jpg',
-    thumbnail:
-      'https://perenual.com/storage/species_image/1_rosa_rubiginosa/thumbnail/15333457985_402b5b8f07_b.jpg',
+    original_url: '',
+    regular_url: '',
+    medium_url: '',
+    small_url: '',
+    thumbnail: '',
   },
-  other_images: [
-    {
-      image_id: 2,
-      license: 4,
-      license_name: 'Attribution License',
-      license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        'https://perenual.com/storage/species_image/1_rosa_rubiginosa/og/15333457985_402b5b8f07_b_2.jpg',
-      regular_url:
-        'https://perenual.com/storage/species_image/1_rosa_rubiginosa/regular/15333457985_402b5b8f07_b_2.jpg',
-      medium_url:
-        'https://perenual.com/storage/species_image/1_rosa_rubiginosa/medium/15333457985_402b5b8f07_b_2.jpg',
-      small_url:
-        'https://perenual.com/storage/species_image/1_rosa_rubiginosa/small/15333457985_402b5b8f07_b_2.jpg',
-      thumbnail:
-        'https://perenual.com/storage/species_image/1_rosa_rubiginosa/thumbnail/15333457985_402b5b8f07_b_2.jpg',
-    },
-  ],
+  other_images: [],
   xWateringQuality: ['Clean', 'Filtered'],
   xWateringPeriod: ['Morning', 'Evening'],
   xWateringAvgVolumeRequirement: ['Moderate'],
@@ -178,16 +151,11 @@ export const mockPlants: Plant[] = [
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        'https://perenual.com/storage/species_image/2_lavandula_angustifolia/og/lavender.jpg',
-      regular_url:
-        'https://perenual.com/storage/species_image/2_lavandula_angustifolia/regular/lavender.jpg',
-      medium_url:
-        'https://perenual.com/storage/species_image/2_lavandula_angustifolia/medium/lavender.jpg',
-      small_url:
-        'https://perenual.com/storage/species_image/2_lavandula_angustifolia/small/lavender.jpg',
-      thumbnail:
-        'https://perenual.com/storage/species_image/2_lavandula_angustifolia/thumbnail/lavender.jpg',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
   },
   {
@@ -206,16 +174,15 @@ export const mockPlants: Plant[] = [
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        'https://perenual.com/storage/species_image/3_solanum_lycopersicum/og/tomato.jpg',
+      original_url: '',
       regular_url:
-        'https://perenual.com/storage/species_image/3_solanum_lycopersicum/regular/tomato.jpg',
+        '',
       medium_url:
-        'https://perenual.com/storage/species_image/3_solanum_lycopersicum/medium/tomato.jpg',
+        '',
       small_url:
-        'https://perenual.com/storage/species_image/3_solanum_lycopersicum/small/tomato.jpg',
+        '',
       thumbnail:
-        'https://perenual.com/storage/species_image/3_solanum_lycopersicum/thumbnail/tomato.jpg',
+        '',
     },
   },
   {
@@ -235,15 +202,15 @@ export const mockPlants: Plant[] = [
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
       original_url:
-        'https://perenual.com/storage/species_image/4_dracaena_trifasciata/og/snake_plant.jpg',
+        '',
       regular_url:
-        'https://perenual.com/storage/species_image/4_dracaena_trifasciata/regular/snake_plant.jpg',
+        '',
       medium_url:
-        'https://perenual.com/storage/species_image/4_dracaena_trifasciata/medium/snake_plant.jpg',
+        '',
       small_url:
-        'https://perenual.com/storage/species_image/4_dracaena_trifasciata/small/snake_plant.jpg',
+        '',
       thumbnail:
-        'https://perenual.com/storage/species_image/4_dracaena_trifasciata/thumbnail/snake_plant.jpg',
+        '',
     },
   },
   {
@@ -263,15 +230,15 @@ export const mockPlants: Plant[] = [
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
       original_url:
-        'https://perenual.com/storage/species_image/5_helianthus_annuus/og/sunflower.jpg',
+        '',
       regular_url:
-        'https://perenual.com/storage/species_image/5_helianthus_annuus/regular/sunflower.jpg',
+        '',
       medium_url:
-        'https://perenual.com/storage/species_image/5_helianthus_annuus/medium/sunflower.jpg',
+        '',
       small_url:
-        'https://perenual.com/storage/species_image/5_helianthus_annuus/small/sunflower.jpg',
+        '',
       thumbnail:
-        'https://perenual.com/storage/species_image/5_helianthus_annuus/thumbnail/sunflower.jpg',
+        '',
     },
   },
 ]
@@ -338,15 +305,15 @@ export const mockIndoorPlants: Plant[] = [
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
       original_url:
-        'https://perenual.com/storage/species_image/6_spathiphyllum_wallisii/og/peace_lily.jpg',
+        '',
       regular_url:
-        'https://perenual.com/storage/species_image/6_spathiphyllum_wallisii/regular/peace_lily.jpg',
+        '',
       medium_url:
-        'https://perenual.com/storage/species_image/6_spathiphyllum_wallisii/medium/peace_lily.jpg',
+        '',
       small_url:
-        'https://perenual.com/storage/species_image/6_spathiphyllum_wallisii/small/peace_lily.jpg',
+        '',
       thumbnail:
-        'https://perenual.com/storage/species_image/6_spathiphyllum_wallisii/thumbnail/peace_lily.jpg',
+        '',
     },
   },
 ]
@@ -359,4 +326,536 @@ export const mockIndoorPlantsResponse: ListPlantsResponse = {
   from: 1,
   last_page: 1,
   total: 1,
+}
+
+// Detailed mock data for all plants
+export const mockPlantDetailsMap: Record<number, PlantDetails> = {
+  1: mockPlantDetails,
+  2: {
+    id: 2,
+    common_name: 'Lavender',
+    scientific_name: ['Lavandula angustifolia'],
+    other_name: ['English Lavender', 'True Lavender'],
+    family: 'Lamiaceae',
+    origin: 'Mediterranean',
+    type: 'Herb',
+    dimensions: {
+      type: 'height',
+      min_value: 30,
+      max_value: 60,
+      unit: 'cm',
+    },
+    cycle: Cycle.PERENNIAL,
+    watering: Watering.MINIMUM,
+    watering_general_benchmark: {
+      value: '1-2',
+      unit: 'times per week',
+    },
+    plant_anatomy: [
+      { part: 'flower', color: ['purple', 'blue'] },
+      { part: 'leaf', color: ['silver', 'green'] },
+      { part: 'stem', color: ['green', 'gray'] },
+    ],
+    sunlight: [Sunlight.FULL_SUN],
+    pruning_month: ['March', 'April', 'August'],
+    pruning_count: {
+      amount: 2,
+      interval: 'year',
+    },
+    seeds: 0,
+    attracts: ['bees', 'butterflies'],
+    propagation: ['cuttings', 'seeds'],
+    hardiness: {
+      min: HardinessZone.FIVE,
+      max: HardinessZone.NINE,
+    },
+    hardiness_location: {
+      full_url: 'https://perenual.com/api/species-map/2',
+      full_iframe: '<iframe src="https://perenual.com/api/species-map/2"></iframe>',
+    },
+    flowers: true,
+    flowering_season: 'Summer',
+    soil: ['well-drained', 'sandy', 'loamy'],
+    pest_susceptibility: 'Root rot, Aphids',
+    cones: false,
+    fruits: false,
+    edible_fruit: false,
+    fruiting_season: null,
+    harvest_season: 'Summer',
+    harvest_method: 'Hand picking',
+    leaf: true,
+    edible_leaf: true,
+    growth_rate: 'Moderate',
+    maintenance: 'Low',
+    medicinal: true,
+    poisonous_to_humans: false,
+    poisonous_to_pets: false,
+    drought_tolerant: true,
+    salt_tolerant: false,
+    thorny: false,
+    invasive: false,
+    rare: false,
+    tropical: false,
+    cuisine: true,
+    indoor: false,
+    care_level: 'Easy',
+    description:
+      'A fragrant perennial herb known for its purple flowers and aromatic leaves. Lavender is drought-tolerant and attracts beneficial pollinators.',
+    default_image: {
+      image_id: 2,
+      license: 4,
+      license_name: 'Attribution License',
+      license_url: 'https://creativecommons.org/licenses/by/2.0/',
+      original_url:
+        '',
+      regular_url:
+        '',
+      medium_url:
+        '',
+      small_url:
+        '',
+      thumbnail:
+        '',
+    },
+    other_images: [],
+    xWateringQuality: ['Clean', 'Filtered'],
+    xWateringPeriod: ['Morning'],
+    xWateringAvgVolumeRequirement: ['Low'],
+    xWateringDepthRequirement: ['Shallow'],
+    xWateringBasedTemperature: {
+      unit: 'celsius',
+      min: 15,
+      max: 30,
+    },
+    xWateringPhLevel: {
+      min: 6.5,
+      max: 8.0,
+    },
+    xSunlightDuration: {
+      min: '6',
+      max: '8',
+      unit: 'hours',
+    },
+  },
+  3: {
+    id: 3,
+    common_name: 'Tomato',
+    scientific_name: ['Solanum lycopersicum'],
+    other_name: ['Love Apple', 'Wolf Peach'],
+    family: 'Solanaceae',
+    origin: 'South America',
+    type: 'Annual',
+    dimensions: {
+      type: 'height',
+      min_value: 60,
+      max_value: 200,
+      unit: 'cm',
+    },
+    cycle: Cycle.ANNUAL,
+    watering: Watering.AVERAGE,
+    watering_general_benchmark: {
+      value: '2-3',
+      unit: 'times per week',
+    },
+    plant_anatomy: [
+      { part: 'fruit', color: ['red', 'yellow', 'green'] },
+      { part: 'leaf', color: ['green'] },
+      { part: 'flower', color: ['yellow'] },
+    ],
+    sunlight: [Sunlight.FULL_SUN],
+    pruning_month: ['June', 'July', 'August'],
+    pruning_count: {
+      amount: 1,
+      interval: 'week',
+    },
+    seeds: 100,
+    attracts: ['bees', 'butterflies'],
+    propagation: ['seeds', 'cuttings'],
+    hardiness: {
+      min: HardinessZone.TEN,
+      max: HardinessZone.ELEVEN,
+    },
+    hardiness_location: {
+      full_url: 'https://perenual.com/api/species-map/3',
+      full_iframe: '<iframe src="https://perenual.com/api/species-map/3"></iframe>',
+    },
+    flowers: true,
+    flowering_season: 'Summer',
+    soil: ['well-drained', 'loamy', 'sandy'],
+    pest_susceptibility: 'Aphids, Whiteflies, Blight',
+    cones: false,
+    fruits: true,
+    edible_fruit: true,
+    fruiting_season: 'Summer to Fall',
+    harvest_season: 'Summer to Fall',
+    harvest_method: 'Hand picking',
+    leaf: true,
+    edible_leaf: false,
+    growth_rate: 'Fast',
+    maintenance: 'Medium',
+    medicinal: false,
+    poisonous_to_humans: false,
+    poisonous_to_pets: true,
+    drought_tolerant: false,
+    salt_tolerant: false,
+    thorny: false,
+    invasive: false,
+    rare: false,
+    tropical: false,
+    cuisine: true,
+    indoor: false,
+    care_level: 'Medium',
+    description:
+      'A popular annual vegetable plant that produces edible fruits. Tomatoes require consistent watering and full sun for optimal growth.',
+    default_image: {
+      image_id: 3,
+      license: 4,
+      license_name: 'Attribution License',
+      license_url: 'https://creativecommons.org/licenses/by/2.0/',
+      original_url: '',
+      regular_url:
+        '',
+      medium_url:
+        '',
+      small_url:
+        '',
+      thumbnail:
+        '',
+    },
+    other_images: [],
+    xWateringQuality: ['Clean', 'Filtered'],
+    xWateringPeriod: ['Morning', 'Evening'],
+    xWateringAvgVolumeRequirement: ['Moderate'],
+    xWateringDepthRequirement: ['Deep'],
+    xWateringBasedTemperature: {
+      unit: 'celsius',
+      min: 18,
+      max: 30,
+    },
+    xWateringPhLevel: {
+      min: 6.0,
+      max: 6.8,
+    },
+    xSunlightDuration: {
+      min: '6',
+      max: '8',
+      unit: 'hours',
+    },
+  },
+  4: {
+    id: 4,
+    common_name: 'Snake Plant',
+    scientific_name: ['Dracaena trifasciata'],
+    other_name: ["Mother-in-Law's Tongue", "Saint George's Sword"],
+    family: 'Asparagaceae',
+    origin: 'West Africa',
+    type: 'Succulent',
+    dimensions: {
+      type: 'height',
+      min_value: 30,
+      max_value: 120,
+      unit: 'cm',
+    },
+    cycle: Cycle.PERENNIAL,
+    watering: Watering.MINIMUM,
+    watering_general_benchmark: {
+      value: '1',
+      unit: 'times per week',
+    },
+    plant_anatomy: [
+      { part: 'leaf', color: ['green', 'yellow', 'white'] },
+      { part: 'flower', color: ['white', 'green'] },
+    ],
+    sunlight: [Sunlight.SUN_PART_SHADE, Sunlight.PART_SHADE],
+    pruning_month: ['March', 'April'],
+    pruning_count: {
+      amount: 1,
+      interval: 'year',
+    },
+    seeds: 0,
+    attracts: ['bees'],
+    propagation: ['cuttings', 'division'],
+    hardiness: {
+      min: HardinessZone.NINE,
+      max: HardinessZone.ELEVEN,
+    },
+    hardiness_location: {
+      full_url: 'https://perenual.com/api/species-map/4',
+      full_iframe: '<iframe src="https://perenual.com/api/species-map/4"></iframe>',
+    },
+    flowers: true,
+    flowering_season: 'Spring',
+    soil: ['well-drained', 'sandy'],
+    pest_susceptibility: 'Mealybugs, Spider mites',
+    cones: false,
+    fruits: false,
+    edible_fruit: false,
+    fruiting_season: null,
+    harvest_season: null,
+    harvest_method: 'N/A',
+    leaf: true,
+    edible_leaf: false,
+    growth_rate: 'Slow',
+    maintenance: 'Low',
+    medicinal: false,
+    poisonous_to_humans: true,
+    poisonous_to_pets: true,
+    drought_tolerant: true,
+    salt_tolerant: false,
+    thorny: false,
+    invasive: false,
+    rare: false,
+    tropical: true,
+    cuisine: false,
+    indoor: true,
+    care_level: 'Easy',
+    description:
+      'A hardy indoor succulent plant with upright, sword-like leaves. Snake plants are excellent air purifiers and require minimal care.',
+    default_image: {
+      image_id: 4,
+      license: 4,
+      license_name: 'Attribution License',
+      license_url: 'https://creativecommons.org/licenses/by/2.0/',
+      original_url:
+        '',
+      regular_url:
+        '',
+      medium_url:
+        '',
+      small_url:
+        '',
+      thumbnail:
+        '',
+    },
+    other_images: [],
+    xWateringQuality: ['Clean', 'Filtered'],
+    xWateringPeriod: ['Morning'],
+    xWateringAvgVolumeRequirement: ['Low'],
+    xWateringDepthRequirement: ['Shallow'],
+    xWateringBasedTemperature: {
+      unit: 'celsius',
+      min: 15,
+      max: 30,
+    },
+    xWateringPhLevel: {
+      min: 6.0,
+      max: 7.5,
+    },
+    xSunlightDuration: {
+      min: '2',
+      max: '6',
+      unit: 'hours',
+    },
+  },
+  5: {
+    id: 5,
+    common_name: 'Sunflower',
+    scientific_name: ['Helianthus annuus'],
+    other_name: ['Common Sunflower', 'Girasol'],
+    family: 'Asteraceae',
+    origin: 'North America',
+    type: 'Annual',
+    dimensions: {
+      type: 'height',
+      min_value: 100,
+      max_value: 300,
+      unit: 'cm',
+    },
+    cycle: Cycle.ANNUAL,
+    watering: Watering.AVERAGE,
+    watering_general_benchmark: {
+      value: '2-3',
+      unit: 'times per week',
+    },
+    plant_anatomy: [
+      { part: 'flower', color: ['yellow', 'orange', 'red'] },
+      { part: 'leaf', color: ['green'] },
+      { part: 'seed', color: ['brown', 'black'] },
+    ],
+    sunlight: [Sunlight.FULL_SUN],
+    pruning_month: ['July', 'August'],
+    pruning_count: {
+      amount: 1,
+      interval: 'month',
+    },
+    seeds: 1000,
+    attracts: ['bees', 'butterflies', 'birds'],
+    propagation: ['seeds'],
+    hardiness: {
+      min: HardinessZone.TWO,
+      max: HardinessZone.ELEVEN,
+    },
+    hardiness_location: {
+      full_url: 'https://perenual.com/api/species-map/5',
+      full_iframe: '<iframe src="https://perenual.com/api/species-map/5"></iframe>',
+    },
+    flowers: true,
+    flowering_season: 'Summer to Fall',
+    soil: ['well-drained', 'loamy', 'sandy'],
+    pest_susceptibility: 'Aphids, Birds, Deer',
+    cones: false,
+    fruits: true,
+    edible_fruit: true,
+    fruiting_season: 'Fall',
+    harvest_season: 'Fall',
+    harvest_method: 'Hand picking',
+    leaf: true,
+    edible_leaf: true,
+    growth_rate: 'Fast',
+    maintenance: 'Low',
+    medicinal: false,
+    poisonous_to_humans: false,
+    poisonous_to_pets: false,
+    drought_tolerant: true,
+    salt_tolerant: false,
+    thorny: false,
+    invasive: false,
+    rare: false,
+    tropical: false,
+    cuisine: true,
+    indoor: false,
+    care_level: 'Easy',
+    description:
+      'A tall annual plant with large, bright yellow flowers that follow the sun. Sunflowers produce edible seeds and are excellent for attracting wildlife.',
+    default_image: {
+      image_id: 5,
+      license: 4,
+      license_name: 'Attribution License',
+      license_url: 'https://creativecommons.org/licenses/by/2.0/',
+      original_url:
+        '',
+      regular_url:
+        '',
+      medium_url:
+        '',
+      small_url:
+        '',
+      thumbnail:
+        '',
+    },
+    other_images: [],
+    xWateringQuality: ['Clean', 'Filtered'],
+    xWateringPeriod: ['Morning'],
+    xWateringAvgVolumeRequirement: ['Moderate'],
+    xWateringDepthRequirement: ['Deep'],
+    xWateringBasedTemperature: {
+      unit: 'celsius',
+      min: 15,
+      max: 30,
+    },
+    xWateringPhLevel: {
+      min: 6.0,
+      max: 7.5,
+    },
+    xSunlightDuration: {
+      min: '6',
+      max: '8',
+      unit: 'hours',
+    },
+  },
+  6: {
+    id: 6,
+    common_name: 'Peace Lily',
+    scientific_name: ['Spathiphyllum wallisii'],
+    other_name: ['White Sails', 'Spathe Flower'],
+    family: 'Araceae',
+    origin: 'Central America',
+    type: 'Perennial',
+    dimensions: {
+      type: 'height',
+      min_value: 30,
+      max_value: 100,
+      unit: 'cm',
+    },
+    cycle: Cycle.PERENNIAL,
+    watering: Watering.AVERAGE,
+    watering_general_benchmark: {
+      value: '1-2',
+      unit: 'times per week',
+    },
+    plant_anatomy: [
+      { part: 'flower', color: ['white'] },
+      { part: 'leaf', color: ['green', 'dark green'] },
+    ],
+    sunlight: [Sunlight.PART_SHADE, Sunlight.FULL_SHADE],
+    pruning_month: ['March', 'April'],
+    pruning_count: {
+      amount: 1,
+      interval: 'year',
+    },
+    seeds: 0,
+    attracts: ['bees'],
+    propagation: ['division', 'cuttings'],
+    hardiness: {
+      min: HardinessZone.TEN,
+      max: HardinessZone.ELEVEN,
+    },
+    hardiness_location: {
+      full_url: 'https://perenual.com/api/species-map/6',
+      full_iframe: '<iframe src="https://perenual.com/api/species-map/6"></iframe>',
+    },
+    flowers: true,
+    flowering_season: 'Spring to Summer',
+    soil: ['well-drained', 'loamy'],
+    pest_susceptibility: 'Spider mites, Mealybugs',
+    cones: false,
+    fruits: false,
+    edible_fruit: false,
+    fruiting_season: null,
+    harvest_season: null,
+    harvest_method: 'N/A',
+    leaf: true,
+    edible_leaf: false,
+    growth_rate: 'Moderate',
+    maintenance: 'Low',
+    medicinal: false,
+    poisonous_to_humans: true,
+    poisonous_to_pets: true,
+    drought_tolerant: false,
+    salt_tolerant: false,
+    thorny: false,
+    invasive: false,
+    rare: false,
+    tropical: true,
+    cuisine: false,
+    indoor: true,
+    care_level: 'Easy',
+    description:
+      'A popular indoor plant with glossy green leaves and white flowers. Peace lilies are excellent air purifiers and thrive in low light conditions.',
+    default_image: {
+      image_id: 6,
+      license: 4,
+      license_name: 'Attribution License',
+      license_url: 'https://creativecommons.org/licenses/by/2.0/',
+      original_url:
+        '',
+      regular_url:
+        '',
+      medium_url:
+        '',
+      small_url:
+        '',
+      thumbnail:
+        '',
+    },
+    other_images: [],
+    xWateringQuality: ['Clean', 'Filtered'],
+    xWateringPeriod: ['Morning'],
+    xWateringAvgVolumeRequirement: ['Moderate'],
+    xWateringDepthRequirement: ['Medium'],
+    xWateringBasedTemperature: {
+      unit: 'celsius',
+      min: 18,
+      max: 25,
+    },
+    xWateringPhLevel: {
+      min: 6.0,
+      max: 7.0,
+    },
+    xSunlightDuration: {
+      min: '2',
+      max: '4',
+      unit: 'hours',
+    },
+  },
 }

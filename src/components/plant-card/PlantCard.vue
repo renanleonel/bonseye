@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { Badge } from '@/components/ui/badge'
+import { PlantImage } from '@/components/ui/plant-image'
 import type { Plant } from '@/domain/types/plant'
+import { getPlantImageUrl } from '@/lib/plant-image-utils'
 import { capitalize } from 'es-toolkit'
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 type Props = {
@@ -14,6 +17,8 @@ const props = defineProps<Props>()
 const navigateToItem = (): void => {
   router.push(`/plants/${props.plant.id}`)
 }
+
+const imageUrl = computed(() => getPlantImageUrl(props.plant))
 </script>
 
 <template>
@@ -21,11 +26,12 @@ const navigateToItem = (): void => {
     class="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer"
     @click="navigateToItem"
   >
-    <div class="w-full h-48 bg-gray-50 flex items-center justify-center">
-      <img
+    <div class="w-full h-48">
+      <PlantImage
+        :image-url="imageUrl"
         :alt="plant.common_name"
-        :src="plant.default_image?.original_url"
         class="w-full h-full object-cover transition-transform duration-200"
+        icon-size="lg"
       />
     </div>
     <div class="p-4">

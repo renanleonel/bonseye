@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { PlantQueries } from '@/api/queries/plants'
-import Error from '@/components/error/Error.vue'
 import PlantCard from '@/components/plant-card/PlantCard.vue'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import HomeSkeleton from '@/pages/home/HomeSkeleton.vue'
 import { debounce } from 'es-toolkit'
@@ -23,7 +21,6 @@ const listPlantsQuery = PlantQueries.useListPlantsQuery({
 
 const plants = computed(() => listPlantsQuery.data.value?.data)
 
-const isError = computed(() => listPlantsQuery.isError.value)
 const isLoading = computed(() => listPlantsQuery.isLoading.value)
 </script>
 
@@ -31,10 +28,6 @@ const isLoading = computed(() => listPlantsQuery.isLoading.value)
   <div v-if="isLoading">
     <HomeSkeleton />
   </div>
-
-  <Error v-else-if="isError">
-    <Button @click="listPlantsQuery.refetch()">Try Again</Button>
-  </Error>
 
   <div v-else class="p-10 space-y-8">
     <div class="flex gap-4">
