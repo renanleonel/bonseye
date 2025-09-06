@@ -33,6 +33,9 @@ const navigateToItem = (): void => {
         <h3 class="text-lg font-semibold">
           {{ plant.common_name }}
         </h3>
+
+        <p class="text-xs italic text-gray-500">{{ plant.other_name[0] }}</p>
+
         <div class="flex gap-2">
           <Badge v-if="plant.family" class="bg-green-300">
             {{ plant.family }}
@@ -44,7 +47,6 @@ const navigateToItem = (): void => {
             {{ plant.species_epithet }}
           </Badge>
         </div>
-        <p class="text-xs italic text-gray-500">{{ plant.scientific_name[0] }}</p>
       </div>
     </div>
   </div>

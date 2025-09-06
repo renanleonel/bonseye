@@ -14,6 +14,12 @@ const routes: RouteRecordRaw[] = [
     component: ItemDetailPage,
     props: true,
   },
+  {
+    path: '/garden',
+    name: 'Garden',
+    component: ItemDetailPage,
+    props: true,
+  },
 ]
 
 const router = createRouter({
