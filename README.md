@@ -1,6 +1,6 @@
 # 🌱 Bonseye
 
-A modern Vue 3 application that allows users to **search for plants**, **add them to a personal garden**, and **track plant details over time**. Designed for plant enthusiasts who want a simple and intuitive way to manage a digital garden.
+A modern Vue 3 application that allows users to **search for plants**, **add them to a personal garden**, and **track plant details**. Designed for plant enthusiasts who want a simple and intuitive way to manage a digital garden.
 
 ## ✨ Features
 
