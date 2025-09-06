@@ -4,27 +4,23 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const props = defineProps<{ id: string }>()
 
-// Get the ID from the route params
-const props = defineProps<{
-  id: string
-}>()
+const id = parseInt(props.id)
 
-const listPlantsQuery = PlantQueries.useListPlantsQuery({})
-const plantsMap = computed(() => listPlantsQuery.data.value?.map)
-
-// Get the specific plant by ID
-const plant = computed(() => {
-  const id = parseInt(props.id)
-  return plantsMap.value?.get(id)
+const getPlantByIdQuery = PlantQueries.useGetPlantById({
+  params: { id },
+  options: { enabled: id !== null && id !== undefined },
 })
 
-console.log('item', plant)
+const plant = computed(() => getPlantByIdQuery.data.value)
+const isLoading = computed(() => getPlantByIdQuery.isLoading.value)
 </script>
 
 <template>
   <div class="min-h-screen">
-    <div v-if="plant" class="p-8">
+    <div v-if="isLoading">loading...</div>
+    <div v-else-if="plant" class="p-8">
       <nav class="flex items-center gap-4 mb-8">
         <button
           @click="router.back()"

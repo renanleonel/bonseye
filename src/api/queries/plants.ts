@@ -1,20 +1,21 @@
 import { listPlants } from '@/api/requests/list-plants'
 import type {
+  GetPlantByIdParams,
   ListPlantsParams,
   ListPlantsResponse,
+  PlantDetails,
   ProcessedPlantsResponse,
 } from '@/domain/types/plant'
 import { createMap } from '@/utils/create-map'
 import { useQuery, type UseQueryOptions } from '@tanstack/vue-query'
 import type { AxiosError } from 'axios'
 import type { ComputedRef } from 'vue'
-
-const PLANTS_QUERY_KEY_BASE = ['plants'] as const
+import { getPlantById } from '../requests/get-plant-by-id'
 
 const STALE_TIME = 60 * 1000 * 5 // 5 minutes
 const REFETCH_INTERVAL = 60 * 1000 * 5 // 5 minutes
 
-type ListPlantsQuery = {
+type ListPlantsQueryProps = {
   params?: ComputedRef<ListPlantsParams>
   options?: Exclude<
     UseQueryOptions<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>,
@@ -22,8 +23,8 @@ type ListPlantsQuery = {
   >
 }
 
-export function useListPlantsQuery({ options, params }: ListPlantsQuery) {
-  const queryKey = [...PLANTS_QUERY_KEY_BASE, params]
+export function useListPlantsQuery({ options, params }: ListPlantsQueryProps) {
+  const queryKey = [listPlants.name, params]
 
   const query = useQuery<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>({
     queryKey,
@@ -43,6 +44,30 @@ export function useListPlantsQuery({ options, params }: ListPlantsQuery) {
   return query
 }
 
+type GetPlantByIdQueryProps = {
+  params: GetPlantByIdParams
+  options?: Omit<UseQueryOptions<PlantDetails, AxiosError>, 'queryKey' | 'queryFn'>
+}
+
+export function useGetPlantById({ options, params }: GetPlantByIdQueryProps) {
+  const queryKey = [getPlantById.name, params]
+
+  const query = useQuery<PlantDetails, AxiosError>({
+    queryKey,
+    queryFn: async ({ signal }) => {
+      const response = await getPlantById(params, signal)
+
+      return response
+    },
+    staleTime: STALE_TIME,
+    refetchInterval: REFETCH_INTERVAL,
+    ...options,
+  })
+
+  return query
+}
+
 export const PlantQueries = {
   useListPlantsQuery,
+  useGetPlantById,
 }
