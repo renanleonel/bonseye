@@ -9,7 +9,13 @@ import type {
 } from '@/domain/types/plant'
 import { createMap } from '@/lib/create-map'
 import { mockListPlantsResponse, mockPlantDetailsMap } from '@/lib/mocks'
-import { useQuery, type UseQueryOptions } from '@tanstack/vue-query'
+import {
+  useInfiniteQuery,
+  useQuery,
+  type InfiniteData,
+  type UseInfiniteQueryOptions,
+  type UseQueryOptions,
+} from '@tanstack/vue-query'
 import type { AxiosError } from 'axios'
 import type { ComputedRef } from 'vue'
 
@@ -17,7 +23,7 @@ const STALE_TIME = 60 * 1000 * 5 // 5 minutes
 const REFETCH_INTERVAL = 60 * 1000 * 5 // 5 minutes
 
 type ListPlantsQueryProps = {
-  params?: ComputedRef<ListPlantsParams>
+  params: ComputedRef<ListPlantsParams>
   options?: Exclude<
     UseQueryOptions<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>,
     'queryKey' | 'queryFn'
@@ -48,6 +54,36 @@ export function useListPlantsQuery({ options, params }: ListPlantsQueryProps) {
   })
 
   return query
+}
+
+type InfiniteListPlantsQueryProps = {
+  params: ComputedRef<ListPlantsParams>
+  options?: Exclude<
+    UseInfiniteQueryOptions<ListPlantsResponse, AxiosError, InfiniteData<ListPlantsResponse>>,
+    'queryKey' | 'queryFn' | 'getNextPageParam' | 'initialPageParam'
+  >
+}
+
+export function useInfiniteListPlantsQuery({ options, params }: InfiniteListPlantsQueryProps) {
+  const queryKey = [listPlants.name, params] as const
+
+  return useInfiniteQuery<ListPlantsResponse, AxiosError, InfiniteData<ListPlantsResponse>>({
+    queryKey,
+    initialPageParam: 1,
+    queryFn: async ({ pageParam = 1, signal }) => {
+      try {
+        return await listPlants({ ...params?.value, page: pageParam as number }, signal)
+      } catch (error) {
+        console.warn('API failed, using mock data:', error)
+        return mockListPlantsResponse
+      }
+    },
+    getNextPageParam: (lastPage) =>
+      lastPage.current_page < lastPage.last_page ? lastPage.current_page + 1 : undefined,
+    staleTime: STALE_TIME,
+    refetchInterval: REFETCH_INTERVAL,
+    ...options,
+  })
 }
 
 type GetPlantByIdQueryProps = {
@@ -86,5 +122,6 @@ export function useGetPlantById({ options, params }: GetPlantByIdQueryProps) {
 
 export const PlantQueries = {
   useListPlantsQuery,
+  useInfiniteListPlantsQuery,
   useGetPlantById,
 }

@@ -35,7 +35,7 @@ const imageUrl = computed(() => getPlantImageUrl(props.plant))
       />
     </div>
     <div class="p-4">
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 overflow-hidden">
         <h3 class="text-lg font-semibold">
           {{ plant.common_name }}
         </h3>
@@ -48,9 +48,6 @@ const imageUrl = computed(() => getPlantImageUrl(props.plant))
           </Badge>
           <Badge v-if="plant.genus" class="bg-green-800/50">
             {{ capitalize(plant.genus) }}
-          </Badge>
-          <Badge v-if="plant.species_epithet" class="bg-green-800/50">
-            {{ capitalize(plant.species_epithet) }}
           </Badge>
         </div>
       </div>

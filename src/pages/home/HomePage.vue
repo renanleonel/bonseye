@@ -4,7 +4,7 @@ import PlantCard from '@/components/plant-card/PlantCard.vue'
 import { Input } from '@/components/ui/input'
 import HomeSkeleton from '@/pages/home/HomeSkeleton.vue'
 import { debounce } from 'es-toolkit'
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 
 const searchQuery = ref('')
 const debouncedSearchQuery = ref('')
@@ -15,13 +15,31 @@ const debouncedUpdate = debounce((value: string) => {
 
 watch(searchQuery, (newValue) => debouncedUpdate(newValue))
 
-const listPlantsQuery = PlantQueries.useListPlantsQuery({
+const listPlantsQuery = PlantQueries.useInfiniteListPlantsQuery({
   params: computed(() => ({ q: debouncedSearchQuery.value || undefined })),
 })
 
-const plants = computed(() => listPlantsQuery.data.value?.data)
+console.log(listPlantsQuery.data.value)
 
+const plants = computed(() => listPlantsQuery.data.value?.pages.flatMap((page) => page.data) ?? [])
 const isLoading = computed(() => listPlantsQuery.isLoading.value)
+
+const loadMoreTrigger = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  if (!loadMoreTrigger.value) return
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting && listPlantsQuery.hasNextPage.value) {
+        listPlantsQuery.fetchNextPage()
+      }
+    },
+    { rootMargin: '200px' },
+  )
+
+  observer.observe(loadMoreTrigger.value)
+})
 </script>
 
 <template>
@@ -45,5 +63,7 @@ const isLoading = computed(() => listPlantsQuery.isLoading.value)
     >
       <PlantCard v-for="plant in plants" :key="plant.id" :plant="plant" />
     </div>
+
+    <div ref="loadMoreTrigger" class="h-10" />
   </div>
 </template>
