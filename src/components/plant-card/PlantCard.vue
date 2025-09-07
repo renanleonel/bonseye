@@ -2,7 +2,7 @@
 import { PlantImage } from '@/components/plant-image'
 import { Badge } from '@/components/ui/badge'
 import type { Plant } from '@/domain/types/plant'
-import { getPlantImageUrl } from '@/lib/plant-image-utils'
+import { getPlantImageUrl } from '@/lib/plant-image'
 import { capitalize } from 'es-toolkit'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'

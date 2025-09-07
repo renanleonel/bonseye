@@ -20,6 +20,7 @@ export const mockPlant: Plant = {
   species_epithet: 'rubiginosa',
   genus: 'Rosa',
   default_image: {
+    image_id: 1,
     license: 4,
     license_name: 'Attribution License',
     license_url: 'https://creativecommons.org/licenses/by/2.0/',
@@ -148,6 +149,7 @@ export const mockPlants: Plant[] = [
     species_epithet: 'angustifolia',
     genus: 'Lavandula',
     default_image: {
+      image_id: 2,
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
@@ -171,18 +173,15 @@ export const mockPlants: Plant[] = [
     species_epithet: 'lycopersicum',
     genus: 'Solanum',
     default_image: {
+      image_id: 3,
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
       original_url: '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
   },
   {
@@ -198,19 +197,15 @@ export const mockPlants: Plant[] = [
     species_epithet: 'trifasciata',
     genus: 'Dracaena',
     default_image: {
+      image_id: 4,
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
   },
   {
@@ -226,19 +221,15 @@ export const mockPlants: Plant[] = [
     species_epithet: 'annuus',
     genus: 'Helianthus',
     default_image: {
+      image_id: 5,
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
   },
 ]
@@ -302,18 +293,14 @@ export const mockIndoorPlants: Plant[] = [
     genus: 'Spathiphyllum',
     default_image: {
       license: 4,
+      image_id: 6,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
   },
 ]
@@ -328,7 +315,6 @@ export const mockIndoorPlantsResponse: ListPlantsResponse = {
   total: 1,
 }
 
-// Detailed mock data for all plants
 export const mockPlantDetailsMap: Record<number, PlantDetails> = {
   1: mockPlantDetails,
   2: {
@@ -406,16 +392,11 @@ export const mockPlantDetailsMap: Record<number, PlantDetails> = {
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
     other_images: [],
     xWateringQuality: ['Clean', 'Filtered'],
@@ -513,14 +494,10 @@ export const mockPlantDetailsMap: Record<number, PlantDetails> = {
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
       original_url: '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
     other_images: [],
     xWateringQuality: ['Clean', 'Filtered'],
@@ -616,16 +593,11 @@ export const mockPlantDetailsMap: Record<number, PlantDetails> = {
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
     other_images: [],
     xWateringQuality: ['Clean', 'Filtered'],
@@ -722,16 +694,11 @@ export const mockPlantDetailsMap: Record<number, PlantDetails> = {
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
     other_images: [],
     xWateringQuality: ['Clean', 'Filtered'],
@@ -827,16 +794,11 @@ export const mockPlantDetailsMap: Record<number, PlantDetails> = {
       license: 4,
       license_name: 'Attribution License',
       license_url: 'https://creativecommons.org/licenses/by/2.0/',
-      original_url:
-        '',
-      regular_url:
-        '',
-      medium_url:
-        '',
-      small_url:
-        '',
-      thumbnail:
-        '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+      thumbnail: '',
     },
     other_images: [],
     xWateringQuality: ['Clean', 'Filtered'],
