@@ -60,9 +60,10 @@ onMounted(() => {
     </div>
 
     <div
+      data-cy="plants-grid"
       class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-8 md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] md:gap-4 sm:grid-cols-1"
     >
-      <PlantCard data-cy="plant-card" v-for="plant in plants" :key="plant.id" :plant="plant" />
+      <PlantCard v-for="plant in plants" :key="plant.id" :plant="plant" />
     </div>
 
     <div ref="loadMoreTrigger" class="h-10" />

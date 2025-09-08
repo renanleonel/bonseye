@@ -1,48 +1,47 @@
 /// <reference types="cypress" />
 
-describe('Plants Flow', () => {
+describe('Garden Page', () => {
   beforeEach(() => {
     cy.clearLocalStorage()
-    cy.visit('/')
+    cy.visit('/garden')
   })
 
-  it('completes home → search → details → add/remove garden → reload persists', () => {
-    cy.get('[data-cy=plants-grid]').should('be.visible')
-
-    cy.get('[data-cy=plant-card]').should('have.length.greaterThan', 0)
-
-    cy.get('[data-cy=search-input]').type('a')
-    cy.wait(350)
-    cy.get('[data-cy=plant-card]').should('have.length.greaterThan', 0)
-
-    cy.get('[data-cy=plant-card]').first().click()
-    cy.url().should('include', '/plants/')
-
-    cy.get('[data-cy=plant-title]').should('be.visible')
-    cy.get('[data-cy=plant-scientific-name]').should('be.visible')
-    cy.get('[data-cy=plant-description]').should('be.visible')
-
-    cy.get('[data-cy=plant-title]')
-      .invoke('text')
-      .then((s) => s.trim())
-      .as('pickedTitle')
-
-    cy.get('[data-cy=button-toggle-garden]').click()
-
-    cy.get('[data-cy=link-garden]').click()
-    cy.url().should('include', '/garden')
-
-    cy.get('[data-cy=garden-grid] [data-cy=garden-item]').should('have.length', 1)
-    cy.get('[data-cy=garden-count]').should('contain', '1 plant')
-
-    cy.get('[data-cy=button-remove-from-garden]').click()
+  it('shows empty state and navigates to browse plants', () => {
+    cy.get('[data-cy=garden-title]').should('contain', 'My Garden')
     cy.get('[data-cy=garden-empty]').should('be.visible')
 
     cy.get('[data-cy=button-browse-plants]').click()
     cy.url().should('include', '/')
+  })
+
+  it('adds a plant to garden and shows it with correct count', () => {
+    cy.visit('/')
+    cy.get('[data-cy=plant-card]').should('have.length.greaterThan', 0)
     cy.get('[data-cy=plant-card]').first().click()
+
     cy.get('[data-cy=button-toggle-garden]').click()
 
+    cy.get('[data-cy=link-garden]').click()
+    cy.get('[data-cy=garden-grid] [data-cy=garden-item]').should('have.length', 1)
+    cy.get('[data-cy=garden-count]').should('contain', '1 plant')
+  })
+
+  it('removes a plant from garden and shows empty state again', () => {
+    cy.visit('/')
+    cy.get('[data-cy=plant-card]').first().click()
+    cy.get('[data-cy=button-toggle-garden]').click()
+    cy.get('[data-cy=link-garden]').click()
+
+    cy.get('[data-cy=garden-grid] [data-cy=garden-item]').should('have.length', 1)
+    cy.get('[data-cy=button-remove-from-garden]').click()
+
+    cy.get('[data-cy=garden-empty]').should('be.visible')
+  })
+
+  it('persists garden items after reload', () => {
+    cy.visit('/')
+    cy.get('[data-cy=plant-card]').first().click()
+    cy.get('[data-cy=button-toggle-garden]').click()
     cy.get('[data-cy=link-garden]').click()
     cy.get('[data-cy=garden-grid] [data-cy=garden-item]').should('have.length', 1)
 

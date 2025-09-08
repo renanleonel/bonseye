@@ -61,15 +61,15 @@ const handleTogglePlant = () => {
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div class="flex flex-col gap-6">
-        <h1 class="text-4xl font-bold text-gray-900 m-0 leading-tight">
+        <h1 data-cy="plant-title" class="text-4xl font-bold text-gray-900 m-0 leading-tight">
           {{ plant?.common_name }}
         </h1>
 
-        <p class="text-gray-900 text-2xl italic">
+        <p data-cy="plant-scientific-name" class="text-gray-900 text-2xl italic">
           {{ plant?.scientific_name?.[0] }}
         </p>
 
-        <p class="text-base leading-relaxed text-gray-600 m-0">
+        <p data-cy="plant-description" class="text-base leading-relaxed text-gray-600 m-0">
           {{ plant?.description }}
         </p>
 
@@ -96,6 +96,7 @@ const handleTogglePlant = () => {
         </div>
 
         <Button
+          data-cy="button-toggle-garden"
           class="max-w-80 cursor-pointer bg-green-800/50 hover:bg-green-700/50"
           @click="handleTogglePlant"
         >

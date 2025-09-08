@@ -23,6 +23,7 @@ const imageUrl = computed(() => getPlantImageUrl(props.plant))
 
 <template>
   <div
+    data-cy="plant-card"
     class="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer"
     @click="navigateToItem"
   >
