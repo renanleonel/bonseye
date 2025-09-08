@@ -44,12 +44,13 @@ onMounted(() => {
 
 <template>
   <div v-if="isLoading">
-    <HomeSkeleton />
+    <HomeSkeleton data-cy="home-skeleton" />
   </div>
 
   <div v-else class="p-10 space-y-8">
     <div class="flex gap-4">
       <Input
+        data-cy="search-input"
         type="text"
         v-model="searchQuery"
         placeholder="Search plants..."
@@ -61,7 +62,7 @@ onMounted(() => {
     <div
       class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-8 md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] md:gap-4 sm:grid-cols-1"
     >
-      <PlantCard v-for="plant in plants" :key="plant.id" :plant="plant" />
+      <PlantCard data-cy="plant-card" v-for="plant in plants" :key="plant.id" :plant="plant" />
     </div>
 
     <div ref="loadMoreTrigger" class="h-10" />

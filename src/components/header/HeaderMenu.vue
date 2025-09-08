@@ -14,7 +14,10 @@ import { RouterLink } from 'vue-router'
 
       <div class="flex items-center gap-8">
         <RouterLink to="/garden">
-          <Button class="bg-green-800/50 hover:bg-green-700/50 cursor-pointer relative">
+          <Button
+            data-cy="button-garden"
+            class="bg-green-800/50 hover:bg-green-700/50 cursor-pointer relative"
+          >
             Garden
             <Leaf />
           </Button>
