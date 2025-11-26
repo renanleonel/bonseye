@@ -24,7 +24,7 @@ const imageUrl = computed(() => getPlantImageUrl(props.plant))
 <template>
   <div
     data-cy="plant-card"
-    class="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer"
+    class="bg-white rounded-sm shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer"
     @click="navigateToItem"
   >
     <div class="w-full h-48">
@@ -43,7 +43,7 @@ const imageUrl = computed(() => getPlantImageUrl(props.plant))
 
         <p class="text-xs italic text-gray-500">{{ plant.other_name[0] }}</p>
 
-        <div class="flex gap-2">
+        <div class="flex gap-2 h-6">
           <Badge v-if="plant.family" class="bg-green-800/50">
             {{ capitalize(plant.family) }}
           </Badge>
