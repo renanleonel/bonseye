@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8">
+  <div class="py-8">
     <div class="mb-8">
       <div class="h-10 bg-gray-200 rounded w-48 mb-2 animate-pulse" />
       <div class="h-6 bg-gray-200 rounded w-64 animate-pulse" />

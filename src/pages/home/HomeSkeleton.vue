@@ -6,7 +6,7 @@ const SKELETONS_AMOUNT = 8
 </script>
 
 <template>
-  <div class="p-10 space-y-8">
+  <div class="py-10 space-y-8">
     <div class="flex gap-4">
       <Input
         disabled

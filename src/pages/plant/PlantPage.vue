@@ -41,7 +41,7 @@ const handleTogglePlant = () => {
 <template>
   <PlantSkeleton v-if="isLoading" />
 
-  <div v-else-if="plant" class="p-8">
+  <div v-else-if="plant" class="py-8">
     <nav class="flex items-center gap-4 mb-8">
       <button
         @click="router.back()"

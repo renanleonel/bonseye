@@ -19,8 +19,6 @@ const listPlantsQuery = PlantQueries.useInfiniteListPlantsQuery({
   params: computed(() => ({ q: debouncedSearchQuery.value || undefined })),
 })
 
-console.log(listPlantsQuery.data.value)
-
 const plants = computed(() => listPlantsQuery.data.value?.pages.flatMap((page) => page.data) ?? [])
 const isLoading = computed(() => listPlantsQuery.isLoading.value)
 
@@ -47,7 +45,7 @@ onMounted(() => {
     <HomeSkeleton data-cy="home-skeleton" />
   </div>
 
-  <div v-else class="p-10 space-y-8">
+  <div v-else class="py-10 space-y-8">
     <div class="flex gap-4">
       <Input
         data-cy="search-input"

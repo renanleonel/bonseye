@@ -1,7 +1,7 @@
 <template>
-  <div class="p-8">
+  <div class="py-8">
     <nav class="flex items-center gap-4 mb-8">
-      <div class="w-8 h-8 bg-gray-200 rounded animate-pulse" />
+      <div class="size-5 bg-gray-200 rounded animate-pulse" />
       <div class="flex items-center gap-1 text-sm">
         <div class="h-4 bg-gray-200 rounded w-36 animate-pulse" />
       </div>
@@ -14,6 +14,10 @@
         <div class="h-8 bg-gray-200 rounded w-1/2 animate-pulse" />
 
         <div class="space-y-2">
+          <div class="h-4 bg-gray-200 rounded w-full animate-pulse" />
+          <div class="h-4 bg-gray-200 rounded w-full animate-pulse" />
+          <div class="h-4 bg-gray-200 rounded w-full animate-pulse" />
+          <div class="h-4 bg-gray-200 rounded w-full animate-pulse" />
           <div class="h-4 bg-gray-200 rounded w-full animate-pulse" />
           <div class="h-4 bg-gray-200 rounded w-full animate-pulse" />
           <div class="h-4 bg-gray-200 rounded w-3/4 animate-pulse" />

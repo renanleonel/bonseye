@@ -13,7 +13,7 @@ const isEmpty = computed(() => plantCount.value === 0)
 </script>
 
 <template>
-  <div class="p-8">
+  <div class="py-8">
     <div class="mb-8">
       <h1 data-cy="garden-title" class="text-4xl font-bold text-gray-900 mb-2">My Garden</h1>
       <p v-if="plantCount > 0" data-cy="garden-count" class="text-gray-600">

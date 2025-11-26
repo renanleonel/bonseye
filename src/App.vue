@@ -7,9 +7,9 @@ import { RouterView } from 'vue-router'
 <template>
   <Analytics />
 
-  <div class="bg-[#F7F6F5] min-h-screen h-full">
+  <div class="bg-[#F7F6F5] min-h-screen h-full px-5 md:px-10 lg:px-20">
     <Header />
-    <main id="app" class="max-w-6xl mx-auto">
+    <main id="app" class=" ">
       <RouterView />
     </main>
   </div>
