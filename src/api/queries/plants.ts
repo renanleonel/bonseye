@@ -1,5 +1,8 @@
+import { getPlantById as getPlantByIdMock } from '@/api/mocks/get-plant-by-id'
+import { listPlants as listPlantsMock } from '@/api/mocks/list-plants'
 import { getPlantById } from '@/api/requests/get-plant-by-id'
 import { listPlants } from '@/api/requests/list-plants'
+import { USE_MOCK_API } from '@/domain/constants/api-url'
 import type {
   GetPlantByIdParams,
   ListPlantsParams,
@@ -8,7 +11,6 @@ import type {
   ProcessedPlantsResponse,
 } from '@/domain/types/plant'
 import { createMap } from '@/lib/create-map'
-import { mockListPlantsResponse, mockPlantDetailsMap } from '@/lib/mocks'
 import {
   useInfiniteQuery,
   useQuery,
@@ -36,14 +38,9 @@ export function useListPlantsQuery({ options, params }: ListPlantsQueryProps) {
   const query = useQuery<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>({
     queryKey,
     queryFn: async ({ signal }) => {
-      try {
-        const response = await listPlants(params?.value, signal)
+      if (USE_MOCK_API) return listPlantsMock(params?.value)
 
-        return response
-      } catch (error) {
-        console.warn('API failed, using mock data:', error)
-        return mockListPlantsResponse
-      }
+      return listPlants(params?.value, signal)
     },
     select: (response: ListPlantsResponse): ProcessedPlantsResponse => {
       return { ...response, map: createMap(response.data) }
@@ -71,12 +68,10 @@ export function useInfiniteListPlantsQuery({ options, params }: InfiniteListPlan
     queryKey,
     initialPageParam: 1,
     queryFn: async ({ pageParam = 1, signal }) => {
-      try {
-        return await listPlants({ ...params?.value, page: pageParam as number }, signal)
-      } catch (error) {
-        console.warn('API failed, using mock data:', error)
-        return mockListPlantsResponse
+      if (USE_MOCK_API) {
+        return listPlantsMock({ ...params?.value, page: pageParam as number })
       }
+      return listPlants({ ...params?.value, page: pageParam as number }, signal)
     },
     getNextPageParam: (lastPage) =>
       lastPage.current_page < lastPage.last_page ? lastPage.current_page + 1 : undefined,
@@ -97,20 +92,10 @@ export function useGetPlantById({ options, params }: GetPlantByIdQueryProps) {
   const query = useQuery<PlantDetails, AxiosError>({
     queryKey,
     queryFn: async ({ signal }) => {
-      try {
-        const response = await getPlantById(params, signal)
-
-        return response
-      } catch (error) {
-        console.warn('API failed, using mock data:', error)
-        const mockPlant = mockPlantDetailsMap[params.id]
-
-        if (!mockPlant) {
-          throw new Error(`Plant with ID ${params.id} not found in mock data`)
-        }
-
-        return mockPlant
+      if (USE_MOCK_API) {
+        return getPlantByIdMock(params)
       }
+      return getPlantById(params, signal)
     },
     staleTime: STALE_TIME,
     refetchInterval: REFETCH_INTERVAL,
