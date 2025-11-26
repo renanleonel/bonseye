@@ -41,11 +41,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="isLoading">
-    <HomeSkeleton data-cy="home-skeleton" />
-  </div>
-
-  <div v-else class="py-10 space-y-8">
+  <div class="py-10 space-y-8">
     <div class="flex gap-4">
       <Input
         data-cy="search-input"
@@ -57,7 +53,12 @@ onMounted(() => {
       />
     </div>
 
+    <div v-if="isLoading">
+      <HomeSkeleton data-cy="home-skeleton" />
+    </div>
+
     <div
+      v-else="!isLoading"
       data-cy="plants-grid"
       class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-8 md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] md:gap-4 sm:grid-cols-1"
     >
