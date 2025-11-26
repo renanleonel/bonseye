@@ -2,7 +2,7 @@ import { getPlantById as getPlantByIdMock } from '@/api/mocks/get-plant-by-id'
 import { listPlants as listPlantsMock } from '@/api/mocks/list-plants'
 import { getPlantById } from '@/api/requests/get-plant-by-id'
 import { listPlants } from '@/api/requests/list-plants'
-import { USE_MOCK_API } from '@/domain/constants/api-url'
+import { USE_PERENUAL_API } from '@/domain/constants/api-url'
 import type {
   GetPlantByIdParams,
   ListPlantsParams,
@@ -38,9 +38,9 @@ export function useListPlantsQuery({ options, params }: ListPlantsQueryProps) {
   const query = useQuery<ListPlantsResponse, AxiosError, ProcessedPlantsResponse>({
     queryKey,
     queryFn: async ({ signal }) => {
-      if (USE_MOCK_API) return listPlantsMock(params?.value)
+      if (USE_PERENUAL_API) return listPlants(params?.value, signal)
 
-      return listPlants(params?.value, signal)
+      return listPlantsMock(params?.value)
     },
     select: (response: ListPlantsResponse): ProcessedPlantsResponse => {
       return { ...response, map: createMap(response.data) }
@@ -68,10 +68,10 @@ export function useInfiniteListPlantsQuery({ options, params }: InfiniteListPlan
     queryKey,
     initialPageParam: 1,
     queryFn: async ({ pageParam = 1, signal }) => {
-      if (USE_MOCK_API) {
-        return listPlantsMock({ ...params?.value, page: pageParam as number })
+      if (USE_PERENUAL_API) {
+        return listPlants({ ...params?.value, page: pageParam as number }, signal)
       }
-      return listPlants({ ...params?.value, page: pageParam as number }, signal)
+      return listPlantsMock({ ...params?.value, page: pageParam as number })
     },
     getNextPageParam: (lastPage) =>
       lastPage.current_page < lastPage.last_page ? lastPage.current_page + 1 : undefined,
@@ -92,10 +92,10 @@ export function useGetPlantById({ options, params }: GetPlantByIdQueryProps) {
   const query = useQuery<PlantDetails, AxiosError>({
     queryKey,
     queryFn: async ({ signal }) => {
-      if (USE_MOCK_API) {
-        return getPlantByIdMock(params)
+      if (USE_PERENUAL_API) {
+        return getPlantById(params, signal)
       }
-      return getPlantById(params, signal)
+      return getPlantByIdMock(params)
     },
     staleTime: STALE_TIME,
     refetchInterval: REFETCH_INTERVAL,

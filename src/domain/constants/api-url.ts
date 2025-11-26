@@ -9,16 +9,12 @@ function parseBooleanEnv(value: string | boolean | undefined): boolean | undefin
 /**
  * Flag to use mock data instead of real API requests.
  *
- * Priority:
- * 1. If VITE_USE_MOCK_API is explicitly set in .env, use that value
- * 2. Otherwise, default to true in development, false in production
+ * Behavior:
+ * - Only fetch from real API if VITE_USE_PERENUAL_API is present and set to true
+ * - Otherwise (not present or false), use the mocked version
  *
  * Usage:
- * - Development: Mocks enabled by default (no API key needed)
- * - Production: Real API by default (requires API key)
- * - Override: Set VITE_USE_MOCK_API=true/false in .env to force behavior
+ * - Default: Use mock API (no API key needed)
+ * - To use real API: Set VITE_USE_PERENUAL_API=true in .env
  */
-const explicitMockFlag = parseBooleanEnv(import.meta.env.VITE_USE_MOCK_API)
-const isDevelopment = import.meta.env.MODE === 'development'
-
-export const USE_MOCK_API = explicitMockFlag ?? isDevelopment
+export const USE_PERENUAL_API = parseBooleanEnv(import.meta.env.VITE_USE_PERENUAL_API) === true
