@@ -2,6 +2,7 @@
 import { PlantQueries } from '@/api/queries/plants'
 import PlantCard from '@/components/plant-card/PlantCard.vue'
 import { Input } from '@/components/ui/input'
+import HomeEmpty from '@/pages/home/HomeEmpty.vue'
 import HomeSkeleton from '@/pages/home/HomeSkeleton.vue'
 import { debounce } from 'es-toolkit'
 import { computed, onMounted, ref, watch } from 'vue'
@@ -57,8 +58,12 @@ onMounted(() => {
       <HomeSkeleton data-cy="home-skeleton" />
     </div>
 
+    <div v-else-if="plants.length === 0" data-cy="empty-state">
+      <HomeEmpty />
+    </div>
+
     <div
-      v-else="!isLoading"
+      v-else
       data-cy="plants-grid"
       class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-8 md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] md:gap-4 sm:grid-cols-1"
     >
